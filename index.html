@@ -339,9 +339,9 @@ MP.api.segment('App Open', "$region", {where: '(properties["mp_country_code"] ==
 
   function updateHeatmap( event ) {
     var map = event.chart;
-    _.each(map.dataProvider.areas, function(state){
+    _.each(map.dataProvider.areas, function(state, idx){
       debugger
-      map.dataProvider.areas[state].value = geo.json[state.title[0]]
+      map.dataProvider.areas[idx].value = geo.json[state.title[0]]
       //map.dataProvider.areas[ i ].value = Math.round( Math.random() * 10000 );
     })
     
