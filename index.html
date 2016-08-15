@@ -25,7 +25,7 @@
  * You'll need to find your own. We recommend http://www.maxmind.com
  */
  
-MP.api.segment('App Open', "mp_country_code").done(function(geo){
+MP.api.segment('App Open', "$region").done(function(geo){
   var defaultMap = "usaLow";
   var countryMaps = {
     "AF": [ "afghanistanLow" ],
@@ -219,17 +219,22 @@ MP.api.segment('App Open', "mp_country_code").done(function(geo){
 
 
   function updateHeatmap( event ) {
+    debugger
     var map = event.chart;
-    if ( map.dataGenerated )
-      return;
-    if ( map.dataProvider.areas.length === 0 ) {
-      setTimeout( updateHeatmap, 100 );
-      return;
-    }
-    for ( var i = 0; i < map.dataProvider.areas.length; i++ ) {
-      debugger
-      map.dataProvider.areas[ i ].value = Math.round( Math.random() * 10000 );
-    }
+    _.each(geo.json, function(val, state){
+       map.dataProvider.areas[ i ].value = Math.round( Math.random() * 10000 );
+    })
+    
+    // if ( map.dataGenerated )
+    //   return;
+    // if ( map.dataProvider.areas.length === 0 ) {
+    //   setTimeout( updateHeatmap, 100 );
+    //   return;
+    // }
+    // for ( var i = 0; i < map.dataProvider.areas.length; i++ ) {
+    //   debugger
+    //   map.dataProvider.areas[ i ].value = Math.round( Math.random() * 10000 );
+    // }
     map.dataGenerated = true;
     map.validateNow();
   }
