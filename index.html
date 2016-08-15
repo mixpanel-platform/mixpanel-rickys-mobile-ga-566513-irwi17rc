@@ -7,10 +7,14 @@
 </style>
 
 <!-- Resources -->
-<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
-<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
+  <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+  <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+  <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+  <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
 <!-- Chart code -->
 <script>
@@ -19,7 +23,7 @@
  * It is not public web service that you can use
  * You'll need to find your own. We recommend http://www.maxmind.com
  */
-$.getJSON( "https://services.amcharts.com/ip/?v=xz6Z", function( geo ) {
+jQuery.getJSON( "https://services.amcharts.com/ip/?v=xz6Z", function( geo ) {
 
   var defaultMap = "usaLow";
   var countryMaps = {
