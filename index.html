@@ -294,8 +294,6 @@ MP.api.segment('App Open', "$region", {where: '(properties["mp_country_code"] ==
   };
 
   // calculate which map to be used
-  debugger
-
   var currentMap = defaultMap;
   var titles = [];
   if ( countryMaps[ geo.country_code ] !== undefined ) {
@@ -340,11 +338,10 @@ MP.api.segment('App Open', "$region", {where: '(properties["mp_country_code"] ==
 
 
   function updateHeatmap( event ) {
-    debugger
     var map = event.chart;
     _.each(map.dataProvider.areas, function(state){
       debugger
-      map.dataProvider.areas[state].value = geo.json
+      map.dataProvider.areas[state].value = geo.json[state.title[0]]
       //map.dataProvider.areas[ i ].value = Math.round( Math.random() * 10000 );
     })
     
