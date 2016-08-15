@@ -23,8 +23,9 @@
  * It is not public web service that you can use
  * You'll need to find your own. We recommend http://www.maxmind.com
  */
-jQuery.getJSON( "https://services.amcharts.com/ip/?v=xz6Z", function( geo ) {
-
+ 
+MP.api.segmentation('App Open', "mp_country_code").done(function(geo){
+  debugger
   var defaultMap = "usaLow";
   var countryMaps = {
     "AF": [ "afghanistanLow" ],
