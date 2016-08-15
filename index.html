@@ -293,7 +293,7 @@ MP.api.segment('App Open', "$region", {where: '(properties["mp_country_code"] ==
   //   "YE": [ "yemenLow" ]
   // };
 
-  // // calculate which map to be used
+  // calculate which map to be used
   // var currentMap = defaultMap;
   // var titles = [];
   // if ( countryMaps[ geo.country_code ] !== undefined ) {
@@ -310,7 +310,8 @@ MP.api.segment('App Open', "$region", {where: '(properties["mp_country_code"] ==
   
   var map = AmCharts.makeChart( "chartdiv", {
     "type": "map",
-    "theme": "light",    "colorSteps": 10,
+    "theme": "light",    
+    "colorSteps": 10,
     "dataProvider": {
       "map": "usaLow",
       "getAreasFromMap": true,
@@ -329,7 +330,7 @@ MP.api.segment('App Open', "$region", {where: '(properties["mp_country_code"] ==
     "zoomControl": {
       "minZoomLevel": 0.9
     },
-    "titles": titles,
+    //"titles": titles,
     "listeners": [ {
       "event": "init",
       "method": updateHeatmap
