@@ -13,6 +13,7 @@
   <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
   <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
   <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+  <script src="https://www.amcharts.com/lib/3/maps/js/usaLow.js"></script>
   <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
   <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
@@ -192,7 +193,7 @@ MP.api.segment('App Open', "mp_country_code").done(function(geo){
     "type": "map",
     "theme": "light",    "colorSteps": 10,
     "dataProvider": {
-      "mapURL": "https://www.amcharts.com/lib/3/maps/svg/" + currentMap + ".svg",
+      "map": "usaLow",
       "getAreasFromMap": true,
       "zoomLevel": 0.9,
       "areas": []
