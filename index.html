@@ -25,7 +25,6 @@
  */
  
 MP.api.segment('App Open', "mp_country_code").done(function(geo){
-  debugger
   var defaultMap = "usaLow";
   var countryMaps = {
     "AF": [ "afghanistanLow" ],
@@ -173,6 +172,8 @@ MP.api.segment('App Open', "mp_country_code").done(function(geo){
   };
 
   // calculate which map to be used
+  debugger
+
   var currentMap = defaultMap;
   var titles = [];
   if ( countryMaps[ geo.country_code ] !== undefined ) {
@@ -186,7 +187,7 @@ MP.api.segment('App Open', "mp_country_code").done(function(geo){
     }
 
   }
-
+  
   var map = AmCharts.makeChart( "chartdiv", {
     "type": "map",
     "theme": "light",    "colorSteps": 10,
